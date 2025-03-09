@@ -1,4 +1,4 @@
-package com.tienda.service;
+package com.connexcanina.service;
 
 import org.springframework.web.multipart.MultipartFile;
 

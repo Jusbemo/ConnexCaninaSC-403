@@ -1,8 +1,8 @@
-package com.tienda.service.impl;
+package com.connexcanina.service.impl;
 
-import com.tienda.dao.ProductoDao;
-import com.tienda.domain.Producto;
-import com.tienda.service.ProductoService;
+import com.connexcanina.dao.ProductoDao;
+import com.connexcanina.domain.Producto;
+import com.connexcanina.service.ProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

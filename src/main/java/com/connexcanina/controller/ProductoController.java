@@ -1,9 +1,9 @@
-package com.tienda.controller;
+package com.connexcanina.controller;
 
-import com.tienda.domain.Producto;
-import com.tienda.service.ProductoService;
-import com.tienda.service.CategoriaService;
-import com.tienda.service.impl.FirebaseStorageServiceImpl;
+import com.connexcanina.domain.Producto;
+import com.connexcanina.service.ProductoService;
+import com.connexcanina.service.CategoriaService;
+import com.connexcanina.service.impl.FirebaseStorageServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

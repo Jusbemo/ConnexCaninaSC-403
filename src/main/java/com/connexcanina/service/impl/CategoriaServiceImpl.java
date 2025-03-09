@@ -1,8 +1,8 @@
-package com.tienda.service.impl;
+package com.connexcanina.service.impl;
 
-import com.tienda.dao.CategoriaDao;
-import com.tienda.domain.Categoria;
-import com.tienda.service.CategoriaService;
+import com.connexcanina.dao.CategoriaDao;
+import com.connexcanina.domain.Categoria;
+import com.connexcanina.service.CategoriaService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

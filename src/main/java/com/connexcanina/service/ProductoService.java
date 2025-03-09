@@ -1,6 +1,6 @@
-package com.tienda.service;
+package com.connexcanina.service;
 
-import com.tienda.domain.Producto;
+import com.connexcanina.domain.Producto;
 
 import java.util.List;
 

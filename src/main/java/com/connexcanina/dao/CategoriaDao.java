@@ -1,6 +1,6 @@
-package com.tienda.dao;
+package com.connexcanina.dao;
 
-import com.tienda.domain.Categoria;
+import com.connexcanina.domain.Categoria;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 

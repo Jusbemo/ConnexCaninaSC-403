@@ -8,11 +8,11 @@
         <version>3.3.5</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.tienda</groupId>
-    <artifactId>Tienda</artifactId>
+    <groupId>com.connexcanina</groupId>
+    <artifactId>ConnexCanina</artifactId>
     <version>1</version>
-    <name>Tienda</name>
-    <description>Proyecto Web y Patrones</description>
+    <name>ConnexCanina</name>
+    <description>Proyecto Connex Canina</description>
     <url/>
     <licenses>
         <license/>

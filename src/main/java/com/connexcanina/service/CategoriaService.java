@@ -1,6 +1,6 @@
-package com.tienda.service;
+package com.connexcanina.service;
 
-import com.tienda.domain.Categoria;
+import com.connexcanina.domain.Categoria;
 import java.util.List;
 
 public interface CategoriaService {

@@ -1,4 +1,4 @@
-package com.tienda.domain;
+package com.connexcanina.domain;
 
 import lombok.Data;
 import jakarta.persistence.*;

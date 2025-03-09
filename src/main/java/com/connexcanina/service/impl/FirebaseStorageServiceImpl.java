@@ -1,4 +1,4 @@
-package com.tienda.service.impl;
+package com.connexcanina.service.impl;
 
 import com.google.auth.Credentials;
 import com.google.auth.ServiceAccountSigner;
@@ -8,7 +8,7 @@ import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.Storage.SignUrlOption;
 import com.google.cloud.storage.StorageOptions;
-import com.tienda.service.FirebaseStorageService;
+import com.connexcanina.service.FirebaseStorageService;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;

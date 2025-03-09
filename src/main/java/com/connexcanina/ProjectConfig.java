@@ -1,4 +1,4 @@
-package com.tienda;
+package com.connexcanina;
 
 import java.util.Locale;
 import org.springframework.context.MessageSource;
