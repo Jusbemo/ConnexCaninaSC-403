@@ -1,0 +1,7 @@
+//package com.connexcanina.dao;
+//
+//import com.connexcanina.domain.Servicio;
+//import org.springframework.data.jpa.repository.JpaRepository;
+//
+//public interface ServicioDao extends JpaRepository<Servicio, Long> {
+//}

@@ -1,19 +1,9 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
-<head>
-    <th:block th:replace="~{layout/plantilla :: head}"></th:block>
-    <link th:href="@{/css/index.css}" rel="stylesheet">
-</head>
-<body>
-<header th:replace="~{layout/plantilla :: header}"/>
-
 <!-- Sección de Hero Image Inicial -->
-<section class="hero-section container">
+<section th:fragment="hero-section" class="hero-section container">
     <div class="row align-items-center">
         <!-- Imagen -->
         <div class="col-lg-6 text-center">
-                <img th:src="@{/images/hero-image.webp}" alt="Adiestramiento Canino en Casa" class="image-placeholder">
+            <img th:src="@{/images/hero-image.webp}" alt="Adiestramiento Canino en Casa" class="image-placeholder">
         </div>
 
         <!-- Texto y Botón -->
@@ -30,7 +20,7 @@
 </section>
 
 <!-- Sección de Servicios -->
-<section class="services-section container">
+<section th:fragment="services-section" class="services-section container">
     <!-- Delimitador -->
     <div class="section-divider"></div>
 
@@ -86,7 +76,7 @@
 </section>
 
 <!-- Sección de Beneficios -->
-<section class="benefits-section container">
+<section th:fragment="benefits-section" class="benefits-section container">
     <!-- Delimitador -->
     <div class="section-divider"></div>
 
@@ -114,7 +104,7 @@
 </section>
 
 <!-- Sección de Cómo Funciona -->
-<section class="steps-section container">
+<section th:fragment="how-works-section" class="steps-section container">
     <!-- Delimitador -->
     <div class="section-divider"></div>
 
@@ -151,9 +141,3 @@
         </div>
     </div>
 </section>
-
-
-
-<footer th:replace="~{layout/plantilla :: footer}"/>
-</body>
-</html>

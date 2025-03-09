@@ -45,19 +45,43 @@
                     <!-- Menú de navegación -->
                     <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                         <ul class="navbar-nav">
-                            <li class="nav-item"><a class="nav-link active" th:href="@{/}">HOME</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">SERVICIOS</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">SISTEMA</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">NOSOTROS</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">AGENDE SU CITA</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">CONTÁCTANOS</a></li>
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                   th:classappend="${currentURI == '/' ? 'active' : ''}"
+                                   th:href="@{/}">HOME</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                   th:classappend="${currentURI == '/servicios' ? 'active' : ''}"
+                                   th:href="@{/servicios}">SERVICIOS</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                   th:classappend="${currentURI == '/sistema' ? 'active' : ''}"
+                                   th:href="@{/sistema}">SISTEMA</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                   th:classappend="${currentURI == '/nosotros' ? 'active' : ''}"
+                                   th:href="@{/nosotros}">NOSOTROS</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                   th:classappend="${currentURI == '/agendar' ? 'active' : ''}"
+                                   th:href="@{/agendar}">AGENDE SU CITA</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                   th:classappend="${currentURI == '/contactanos' ? 'active' : ''}"
+                                   th:href="@{/contactanos}">CONTÁCTANOS</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </nav>
 
 
-
+<!--            ELIMINAR EVENTUALMENTE-->
             <nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
                 <div class="container">
                     <a th:href="@{/}" class="navbar-brand">[[#{aplicacion.titulo}]]</a>

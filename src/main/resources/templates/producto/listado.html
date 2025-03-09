@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
-    <head th:replace="~{layout/plantilla :: head}">
+    <head th:replace="~{home/plantilla :: head}">
     </head>
     <body>
-        <header th:replace="~{layout/plantilla :: header}"/>
+        <header th:replace="~{home/plantilla :: header}"/>
         
         <h2>Listado de Productos</h2>
         
@@ -12,6 +12,6 @@
         <section th:replace="~{producto/fragmentos :: agregarProducto}"/>
         <section th:replace="~{producto/fragmentos :: listadoProductos}"/>
         
-        <footer th:replace="~{layout/plantilla :: footer}"/>
+        <footer th:replace="~{home/plantilla :: footer}"/>
     </body>
 </html>

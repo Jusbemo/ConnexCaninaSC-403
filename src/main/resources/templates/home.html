@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:replace="~{home/plantilla :: head}"></th:block>
+    <link th:href="@{/css/index.css}" rel="stylesheet">
+</head>
+<body>
+<header th:replace="~{home/plantilla :: header}"/>
+
+<!-- Sección de Hero Image Inicial -->
+<section th:replace="~{home/secciones :: hero-section}"/>
+
+<!-- Sección de Servicios -->
+<section th:replace="~{home/secciones :: services-section}"/>
+
+<!-- Sección de Beneficios -->
+<section th:replace="~{home/secciones :: benefits-section}"/>
+
+<!-- Sección de Cómo Funciona -->
+<section th:replace="~{home/secciones :: how-works-section}"/>
+
+<footer th:replace="~{home/plantilla :: footer}"/>
+</body>
+</html>
