@@ -1,0 +1,121 @@
+/* Sección Principal del Sistema */
+.system-main-section {
+    background-color: #171717;
+    padding: 100px 0 0 0;
+    color: #d3d3d3;
+}
+
+/* Imagen Grande */
+.system-image {
+    width: 100%;
+    max-width: 500px;
+    height: 350px;
+    background-color: gray;
+    border-radius: 10px;
+    margin: auto;
+}
+
+/* Título */
+.title {
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Descripción */
+.system-description {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-top: 20px;
+}
+
+/* Sección de Pasos del Sistema */
+.system-steps-section {
+    background-color: #171717;
+    padding: 80px 0;
+    color: #d3d3d3;
+}
+
+/* Delimitador entre secciones */
+.section-divider {
+    width: 100%;
+    max-width: 1100px;
+    height: 3px;
+    background-color: #6e6e6e;
+    margin: 30px auto 40px auto;
+    border-radius: 2px;
+}
+
+/* Paso del Sistema */
+.system-step {
+    padding: 40px 0;
+    border-bottom: 2px solid #6e6e6e;
+}
+
+/* Ajuste para centrar mejor el texto de la izquierda */
+.system-step:nth-child(odd) .col-md-6 {
+    text-align: left;
+    padding-left: 80px;
+}
+
+/* Mantiene la alineación del texto a la derecha */
+.system-step:nth-child(even) .col-md-6 {
+    text-align: right;
+    padding-right: 50px;
+}
+
+/* Imagen de cada paso */
+.step-image {
+    width: 100%;
+    max-width: 250px;
+    height: 150px;
+    background-color: gray;
+    border-radius: 10px;
+    margin: auto;
+}
+
+/* Título de cada paso */
+.step-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Descripción del paso */
+.step-description {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+/* Alternar la disposición de las filas en pantallas grandes */
+.flex-md-row-reverse {
+    flex-direction: row-reverse;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .system-step {
+        text-align: center;
+    }
+
+    .system-step .col-md-6 {
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    .system-image {
+        max-width: 90%;
+        height: auto;
+    }
+
+    .step-image {
+        max-width: 90%;
+        height: auto;
+        margin-top: 20px;
+    }
+
+    .flex-md-row-reverse {
+        flex-direction: column;
+    }
+}

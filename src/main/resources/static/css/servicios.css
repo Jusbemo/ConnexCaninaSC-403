@@ -19,7 +19,7 @@
     width: 100%;
     max-width: 1200px;
     height: 3px;
-    background-color: #252525;
+    background-color: #6e6e6e;
     margin: 30px auto 40px auto;
     border-radius: 2px;
 }
@@ -54,7 +54,7 @@
 /* Servicio */
 .service-item {
     padding: 50px 0;
-    border-bottom: 2px solid #252525;
+    border-bottom: 2px solid #6e6e6e;
     display: flex;
     align-items: center;
     justify-content: space-between;

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:replace="~{home/plantilla :: head(titulo='Sistema')}"></th:block>
+    <link th:href="@{/css/sistema.css}" rel="stylesheet">
+</head>
+<body>
+    <header th:replace="~{home/plantilla :: header}"/>
+
+    <!-- Sección Principal del Sistema -->
+    <section th:replace="~{sistema/secciones :: system-main-section}"/>
+
+
+    <!-- Sección de Detalles del Sistema -->
+    <section th:replace="~{sistema/secciones :: system-steps-section}"/>
+
+
+    <footer th:replace="~{home/plantilla :: footer}"/>
+</body>
+</html>
