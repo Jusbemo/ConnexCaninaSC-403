@@ -35,35 +35,18 @@
 
         <!-- Tarjetas de Servicios -->
         <div class="row justify-content-center">
-            <!-- Tarjeta 1 -->
-            <div class="col-lg-4 col-md-6">
+
+            <div class="col-lg-4 col-md-6" th:each="servicio : ${servicios}">
                 <div class="service-card">
-                    <img th:src="@{/images/adiestramiento-cachorros.jpg}" alt="Adiestramiento Canino en Casa" class="card-image-placeholder">
-                    <h3>Entrenamiento para Cachorros</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a purus molestie mauris vehicula vulputate.</p>
-                    <p class="service-price">Desde <strong>$000.00</strong></p>
+                    <img th:src="${servicio.imagen}" th:alt="${servicio.nombreServicio}" class="card-image-placeholder">
+                    <h3 th:text="${servicio.nombreServicio}"></h3>
+                    <p th:text="${servicio.descripcion}"></p>
+                    <p class="service-price">
+                        Desde <strong th:text="${#numbers.formatCurrency(servicio.precio)}"></strong>
+                    </p>
                 </div>
             </div>
 
-            <!-- Tarjeta 2 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="service-card">
-                    <img th:src="@{/images/entrenamiento-canino.jpg}" alt="Adiestramiento Canino en Casa" class="card-image-placeholder">
-                    <h3>Entrenamiento Canino</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a purus molestie mauris vehicula vulputate.</p>
-                    <p class="service-price">Desde <strong>$000.00</strong></p>
-                </div>
-            </div>
-
-            <!-- Tarjeta 3 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="service-card">
-                    <img th:src="@{/images/caminata-correa.jpg}" alt="Adiestramiento Canino en Casa" class="card-image-placeholder">
-                    <h3>Caminata con Correa</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a purus molestie mauris vehicula vulputate.</p>
-                    <p class="service-price">Desde <strong>$000.00</strong></p>
-                </div>
-            </div>
         </div>
 
         <!-- Botón de Agendar Cita -->

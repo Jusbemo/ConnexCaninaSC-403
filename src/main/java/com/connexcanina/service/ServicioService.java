@@ -12,4 +12,6 @@ public interface ServicioService {
     public void save(Servicio servicio);
 
     public void delete(Servicio servicio);
+
+    public List<Servicio> getTop3Servicios();
 }
