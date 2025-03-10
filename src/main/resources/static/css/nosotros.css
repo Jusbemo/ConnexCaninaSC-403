@@ -1,0 +1,29 @@
+.hystory-main-section {
+    background-color: #171717;
+    padding: 50px 0 0 0;
+    color: #d3d3d3;
+}
+
+/* Imagen Grande */
+.hystory-image {
+    width: 100%;
+    max-width: 500px;
+    height: 350px;
+    background-color: gray;
+    border-radius: 10px;
+    margin: auto;
+}
+
+/* Título */
+.title {
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Descripción */
+.hystory-description {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-top: 20px;
+}

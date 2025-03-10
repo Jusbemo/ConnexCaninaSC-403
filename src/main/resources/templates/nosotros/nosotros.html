@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:replace="~{home/plantilla :: head(titulo='Nosotros')}"></th:block>
+    <link th:href="@{/css/nosotros.css}" rel="stylesheet">
+</head>
+<body>
+    <header th:replace="~{home/plantilla :: header}"/>
+
+    <section class="hystory-main-section container">
+        <div class="row align-items-center">
+            <!-- Imagen Grande -->
+            <div class="col-lg-6 text-center">
+                <img th:src="@{/images/caminata-correa.jpg}" alt="Historia" class="hystory-image">
+            </div>
+
+            <!-- Texto del Sistema -->
+            <div class="col-lg-6">
+                <h2 class="title">Nuestra Historia</h2>
+                <p class="hystory-description">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a purus molestie
+                    mauris vehicula vulputate. Nulla facilisi. Morbi tincidunt lacus in urna luctus
+                    vestibulum id eu sem. In condimentum non eros a pretium.
+                </p>
+                <p class="hystory-description">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a purus molestie
+                    mauris vehicula vulputate. Nulla facilisi. Morbi tincidunt lacus in urna luctus
+                    vestibulum id eu sem. In condimentum non eros a pretium.
+                </p>
+                <p class="hystory-description">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a purus molestie
+                    mauris vehicula vulputate. Nulla facilisi. Morbi tincidunt lacus in urna luctus
+                    vestibulum id eu sem. In condimentum non eros a pretium.
+                </p>
+
+                <p class="hystory-description">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a purus molestie
+                    mauris vehicula vulputate. Nulla facilisi. Morbi tincidunt lacus in urna luctus
+                    vestibulum id eu sem. In condimentum non eros a pretium.
+                </p>
+
+                <p class="hystory-description">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a purus molestie
+                    mauris vehicula vulputate. Nulla facilisi. Morbi tincidunt lacus in urna luctus
+                    vestibulum id eu sem. In condimentum non eros a pretium.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <footer th:replace="~{home/plantilla :: footer}"/>
+</body>
+</html>
