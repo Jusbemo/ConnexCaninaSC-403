@@ -17,10 +17,15 @@ public class Servicio implements Serializable {
     @Column(name = "id_servicio")
     private long idServicio;
 
+    @Column(name = "descripcion_corta")
+    private String descripcion;
+
+    @Column(name = "descripcion_larga")
+    private String descripcionLarga;
+
     @Column(name = "nombre_servicio")
     private String nombreServicio;
 
-    private String descripcion;
 
     @Column(nullable = false, precision = 10, scale = 2)
     private BigDecimal precio;
@@ -30,9 +35,11 @@ public class Servicio implements Serializable {
     public Servicio() {
     }
 
-    public Servicio(String nombreServicio, String descripcion, BigDecimal precio, String imagen) {
+    public Servicio(long idServicio, String nombreServicio, String descripcion, String descripcionLarga, BigDecimal precio, String imagen) {
+        this.idServicio = idServicio;
         this.nombreServicio = nombreServicio;
         this.descripcion = descripcion;
+        this.descripcionLarga = descripcionLarga;
         this.precio = precio;
         this.imagen = imagen;
     }

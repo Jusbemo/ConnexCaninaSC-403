@@ -1,29 +1,27 @@
-/* Sección de Introducción a Servicios */
-.services-intro-section {
-    background-color: #171717;
-    min-height: 400px;
-    padding: 100px 0;
-    color: #d3d3d3;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Delimitador visual */
-.section-divider {
-    width: 100%;
-    max-width: 900px;
-    height: 3px;
-    background-color: #252525;
-    margin: 0 auto 40px auto;
-    border-radius: 2px;
-}
-
 /* Contenedor alineado con otras secciones */
 .container {
     max-width: 1300px;
     margin: 0 auto;
     padding: 0 20px;
+}
+
+/* Sección de Introducción a Servicios */
+.services-intro-section {
+    background-color: #171717;
+    min-height: auto;
+    padding: 20px 130px;
+    color: #d3d3d3;
+    display: flex;
+}
+
+/* Delimitador visual */
+.section-divider {
+    width: 100%;
+    max-width: 1200px;
+    height: 3px;
+    background-color: #252525;
+    margin: 30px auto 40px auto;
+    border-radius: 2px;
 }
 
 /* Título */
@@ -47,9 +45,110 @@
     text-align: justify;
 }
 
+/* Sección de Lista de Servicios */
+.services-list-section {
+    background-color: #171717;
+    color: #d3d3d3;
+}
+
+/* Servicio */
+.service-item {
+    padding: 50px 0;
+    border-bottom: 2px solid #252525;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Imagen del servicio - Ajustada para mayor tamaño */
+.service-image {
+    width: 100%;
+    max-width: 400px; /* Más ancha */
+    height: 250px; /* Más alta */
+    background-color: gray;
+    border-radius: 10px;
+    margin: auto;
+}
+
+/* Descripción del servicio */
+.service-description {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Botón Leer Más */
+
+.btn-read-more {
+    display: inline-block;  /* 🔥 Evita que ocupe todo el ancho */
+    background-color: #6f6f6f;
+    color: white;
+    margin-top: 24px;
+    padding: 8px 16px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+    text-align: center;
+    min-width: 120px; /* 🔥 Evita que sea muy pequeño */
+    width: auto; /* 🔥 Ajusta el ancho al contenido */
+    max-width: 200px; /* 🔥 Opcional: Evita que crezca demasiado */
+}
+
+.btn-read-more:hover {
+    background-color: #555;
+    color: indianred;
+}
+
+/* Ajustar texto cuando está alineado a la izquierda */
+.service-item .col-md-6 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.service-item:nth-child(even) .col-md-6 {
+    text-align: left;
+    padding-left: 50px; /* Mueve el texto más al centro */
+}
+
+.service-item:nth-child(odd) .col-md-6 {
+    text-align: right;
+    padding-right: 50px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .service-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .service-item .col-md-6 {
+        padding: 0 20px;
+    }
+
+    .service-image {
+        margin-bottom: 20px;
+        max-width: 90%;
+        height: auto;
+    }
+
+    .service-item:nth-child(even) .col-md-6,
+    .service-item:nth-child(odd) .col-md-6 {
+        text-align: center;
+        padding: 0;
+    }
+}
+
+
+
+
 /* Responsivo */
 @media (max-width: 992px) {
     .services-intro-text {
         text-align: center;
     }
 }
+
+
