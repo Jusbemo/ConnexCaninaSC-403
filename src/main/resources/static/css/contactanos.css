@@ -1,0 +1,84 @@
+/* Sección de Contacto */
+.contact-section {
+    background-color: #171717;
+    padding: 50px 0 80px 0;
+    color: #d3d3d3;
+    text-align: center;
+}
+
+/* Contenedor del formulario */
+.contact-form-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+/* Formulario */
+.contact-form {
+    background-color: #252525;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Campos del formulario */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/* Etiquetas */
+.form-group label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #bbb;
+}
+
+/* Campos de entrada y textarea */
+.contact-form input,
+.contact-form textarea {
+    background-color: #171717;
+    border: 1px solid #333;
+    padding: 12px;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+/* Efecto cuando se selecciona un campo */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #6f6f6f;
+    outline: none;
+    box-shadow: 0px 0px 8px rgba(111, 111, 111, 0.5);
+}
+
+/* Botón de Enviar */
+.btn-submit {
+    width: 100%;
+    background-color: #6f6f6f;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #555;
+    color: indianred;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .contact-form {
+        width: 90%;
+    }
+}
