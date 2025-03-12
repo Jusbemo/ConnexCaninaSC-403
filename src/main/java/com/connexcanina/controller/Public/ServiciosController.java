@@ -1,5 +1,6 @@
 package com.connexcanina.controller.Public;
 
+import com.connexcanina.domain.Servicio;
 import com.connexcanina.service.ServicioService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,4 +20,14 @@ public class ServiciosController {
         model.addAttribute("currentURI", request.getRequestURI());
         return "servicios/servicios";
     }
+
+
+    @GetMapping("/servicios/{nombreServicio}")
+    public String servicioInformacion(HttpServletRequest request, Servicio servicio, Model model){
+        servicio = servicioService.getServicio(servicio);
+        model.addAttribute("currentURI", request.getRequestURI());
+        model.addAttribute("servicio", servicio);
+        return "/servicios/informacion";
+    }
 }
+
