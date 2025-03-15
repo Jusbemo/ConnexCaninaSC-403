@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:replace="~{home/plantilla :: head(titulo='Servicios')}"></th:block>
+    <link th:href="@{/css/servicios.css}" rel="stylesheet">
+</head>
+<body>
+    <header th:replace="~{home/plantilla :: header}"/>
+
+    <!-- Sección de Introducción a Servicios -->
+    <section th:replace="~{public/servicios/secciones :: services-intro-section}"/>
+
+
+    <!-- Sección de Lista de Servicios -->
+    <section th:replace="~{public/servicios/secciones :: services-list-section}"/>
+
+
+    <footer th:replace="~{home/plantilla :: footer}"/>
+</body>
+</html>

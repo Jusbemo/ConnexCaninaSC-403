@@ -18,7 +18,7 @@ public class ServiciosController {
         var listaServicios = servicioService.getServicios();
         model.addAttribute("servicios", listaServicios);
         model.addAttribute("currentURI", request.getRequestURI());
-        return "servicios/servicios";
+        return "public/servicios/servicios";
     }
 
 
@@ -27,7 +27,7 @@ public class ServiciosController {
         servicio = servicioService.getServicio(servicio);
         model.addAttribute("currentURI", request.getRequestURI());
         model.addAttribute("servicio", servicio);
-        return "/servicios/informacion";
+        return "public/servicios/informacion";
     }
 }
 
