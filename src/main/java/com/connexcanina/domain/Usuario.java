@@ -40,13 +40,13 @@ public class Usuario {
     @Column(name = "direccion")
     private String direccion;
 
-    @OneToMany(mappedBy = "idUsuario")
+    @OneToMany(mappedBy = "idUsuario", cascade = CascadeType.REMOVE, orphanRemoval = true)
     private List<Cita> citas = new ArrayList<>();
 
-    @OneToMany(mappedBy = "idUsuario")
+    @OneToMany(mappedBy = "idUsuario", cascade = CascadeType.REMOVE, orphanRemoval = true)
     private List<Consulta> consultas = new ArrayList<>();
 
-    @OneToMany(mappedBy = "idUsuario")
+    @OneToMany(mappedBy = "idUsuario", cascade = CascadeType.REMOVE, orphanRemoval = true)
     private List<Mascota> mascotas = new ArrayList<>();
 
 }
