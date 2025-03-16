@@ -1,7 +1,8 @@
 package com.connexcanina.controller.Private;
 
+import com.connexcanina.domain.Mascota;
 import com.connexcanina.domain.Usuario;
-import com.connexcanina.service.UsuarioService;
+import com.connexcanina.service.MascotaService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -11,29 +12,29 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
-public class UsuariosController {
+public class MacostasController {
 
     @Autowired
-    private UsuarioService usuarioService;
+    private MascotaService mascotaService;
 
-    @GetMapping("/usuarios")
-    public String usuarios(HttpServletRequest request, Model model) {
-        var listaUsuarios = usuarioService.getUsuarios();
-        model.addAttribute("usuarios", listaUsuarios);
+    @GetMapping("/mascotas")
+    public String mascotas(HttpServletRequest request, Model model) {
+        var listaMasccotas = mascotaService.getMascotas();
+        model.addAttribute("mascotas", listaMasccotas);
         model.addAttribute("currentURI", request.getRequestURI());
-        return "private/usuarios/usuarios";
+        return "private/mascotas/mascotas";
     }
 
-    @GetMapping("/usuarios/eliminar/{idUsuario}")
-    public ResponseEntity<Void> eliminarUsuario(@PathVariable Long idUsuario) {
+
+    @GetMapping("/mascotas/eliminar/{idMascota}")
+    public ResponseEntity<Void> eliminarMascota(@PathVariable Long idMascota) {
         try {
-            Usuario usuario = new Usuario();
-            usuario.setIdUsuario(idUsuario);
-            usuarioService.delete(usuario);
+            Mascota mascota = new Mascota();
+            mascota.setIdMascota(idMascota);
+            mascotaService.delete(mascota);
             return ResponseEntity.ok().build();
         } catch (Exception e) {
             return ResponseEntity.status(500).build();
         }
     }
-
 }

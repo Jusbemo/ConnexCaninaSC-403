@@ -1,0 +1,164 @@
+/* Sección de Mascotas */
+.mascotas-section {
+    background-color: #171717;
+    padding: 40px 0 60px 0;
+    color: #d3d3d3;
+    text-align: center;
+}
+
+/* Contenedor responsivo de la tabla */
+.table-responsive {
+    margin-top: 40px;
+    overflow-x: auto;
+}
+
+/* Tabla de Mascotas */
+.mascotas-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Encabezados */
+.mascotas-table thead {
+    background-color: #252525;
+}
+
+.mascotas-table th {
+    padding: 15px;
+    font-size: 16px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #444;
+}
+
+/* Filas */
+.mascotas-table td {
+    padding: 12px;
+    font-size: 15px;
+    border-bottom: 1px solid #333;
+}
+
+/* Alternar colores en filas */
+.mascotas-table tbody tr:nth-child(even) {
+    background-color: #1e1e1e;
+}
+
+/* Botón de eliminar */
+.btn-delete {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn-delete:hover {
+    background-color: darkred;
+}
+
+
+/* Estilo del dropdown de paginación */
+.dt-length select.dt-input {
+    background-color: #252525 !important;
+    color: #d3d3d3 !important;
+    border: 1px solid #6e6e6e !important;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Cambia el color cuando se pasa el mouse */
+.dt-length select.dt-input:hover {
+    background-color: #333 !important;
+}
+
+/* Cambia el color cuando el dropdown está seleccionado */
+.dt-length select.dt-input:focus {
+    outline: none;
+    border-color: #ff0c00 !important;
+}
+
+/* Personaliza la barra de búsqueda */
+.dt-search input.dt-input {
+    background-color: #252525 !important;
+    color: #d3d3d3 !important;
+    border: 1px solid #6e6e6e !important;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 14px;
+}
+
+/* Cambia el color cuando se pasa el mouse */
+.dt-search input.dt-input:hover {
+    background-color: #333 !important;
+}
+
+/* Cambia el color cuando el campo de búsqueda está seleccionado */
+.dt-search input.dt-input:focus {
+    outline: none;
+    border-color: #ff0c00 !important;
+}
+
+/* Estilo general de los botones de paginación */
+div.dt-container .dt-paging .dt-paging-button {
+    color: #ffffff !important;
+    background-color: #333333 !important;
+    border: 1px solid #555555 !important;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 2px;
+    font-weight: bold;
+}
+
+/* Botón activo (página seleccionada) */
+div.dt-container .dt-paging .dt-paging-button.current {
+    background-color: red !important;
+    color: #ffffff !important;
+    border-color: #ff4500 !important;
+}
+
+/* Cambio de color al pasar el mouse */
+div.dt-container .dt-paging .dt-paging-button:hover {
+    background-color: #555555 !important;
+    color: #ffffff !important;
+}
+
+/* Botones deshabilitados */
+div.dt-container .dt-paging .dt-paging-button.disabled {
+    color: rgba(255, 255, 255, 0.5) !important;
+    background-color: #222222 !important;
+    cursor: not-allowed !important;
+}
+
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .table-responsive {
+        overflow-x: scroll;
+    }
+
+    .mascotas-table {
+        width: 900px;
+    }
+
+    .mascotas-table th,
+    .mascotas-table td {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .btn-delete {
+        font-size: 12px;
+        padding: 4px 10px;
+    }
+
+    .dt-search {
+        flex-direction: column;
+        text-align: center;
+    }
+}

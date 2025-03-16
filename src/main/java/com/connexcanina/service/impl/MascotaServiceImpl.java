@@ -10,6 +10,7 @@ import java.util.List;
 
 @Service
 public class MascotaServiceImpl implements MascotaService {
+
     @Autowired
     private MascotaDao mascotaDao;
 

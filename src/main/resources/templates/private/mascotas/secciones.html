@@ -1,0 +1,38 @@
+<section th:fragment="table-mascotas-section" class="mascotas-section container">
+    <div class="text-center">
+        <h2 class="title">Gestión de Mascotas</h2>
+        <p class="subtitle">Lista de mascotas registradas en el sistema</p>
+    </div>
+
+    <!-- Contenedor responsivo -->
+    <div class="table-responsive">
+        <table id="mascotasTable" class="table table-dark table-striped hoverdt-head-center mascotas-table">
+            <thead>
+            <tr>
+                <th class="dt-head-center">ID</th>
+                <th class="dt-head-center">Nombre Dueño</th>
+                <th class="dt-head-center">Nombre Mascota</th>
+                <th class="dt-head-center">Peso</th>
+                <th class="dt-head-center">Edad</th>
+                <th class="dt-head-center">Raza</th>
+                <th class="dt-head-center">Número de Citas</th>
+                <th class="dt-head-center">Acción</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="mascota : ${mascotas}">
+                <td class="dt-body-center" th:text="${mascota.idMascota}"></td>
+                <td th:text="|${mascota.idUsuario.nombre} ${mascota.idUsuario.apellido}|"></td>
+                <td th:text="${mascota.nombre}"></td>
+                <td th:text="|${mascota.peso} kg|"></td>
+                <td th:text="|${mascota.edad} años|"></td>
+                <td th:text="${mascota.raza}"></td>
+                <td class="dt-body-center" th:text="${#lists.size(mascota.citas)}"></td>
+                <td>
+                    <button class="btn-delete" th:attr="data-id=${mascota.idMascota}">Eliminar</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</section>

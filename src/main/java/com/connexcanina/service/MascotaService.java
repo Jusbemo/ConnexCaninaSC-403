@@ -12,4 +12,6 @@ public interface MascotaService {
     public void save(Mascota mascota);
 
     public void delete(Mascota mascota);
+
+
 }
