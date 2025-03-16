@@ -28,4 +28,9 @@ public class Consulta {
 
     @Column(name = "estado")
     private Boolean estado;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_usuario")
+    private Usuario idUsuario;
+
 }

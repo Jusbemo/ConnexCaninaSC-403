@@ -1,0 +1,40 @@
+<section th:fragment="table-users-section" class="users-section container">
+    <div class="text-center">
+        <h2 class="title">Gestión de Usuarios</h2>
+        <p class="subtitle">Lista de usuarios registrados en el sistema</p>
+    </div>
+
+    <!-- Contenedor responsivo -->
+    <div class="table-responsive">
+        <table id="usuariosTable" class="table table-dark table-striped users-table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Rol</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Teléfono</th>
+                <th>Mascotas</th>
+                <th>Correo</th>
+                <th>Dirección</th>
+                <th>Acción</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="usuario : ${usuarios}">
+                <td th:text="${usuario.idUsuario}"></td>
+                <td th:text="${usuario.idRol.nombreRol}"></td>
+                <td th:text="${usuario.nombre}"></td>
+                <td th:text="${usuario.apellido}"></td>
+                <td th:text="${usuario.telefono} ?: 'N/A'"></td>
+                <td th:text="${#lists.size(usuario.mascotas)}"></td>
+                <td th:text="${usuario.correoElectronico}"></td>
+                <td th:text="${usuario.direccion} ?: 'N/A'"></td>
+                <td>
+                    <button class="btn-delete" th:attr="data-id=${usuario.idUsuario}">Eliminar</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
