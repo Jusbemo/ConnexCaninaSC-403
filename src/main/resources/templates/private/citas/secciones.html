@@ -1,0 +1,45 @@
+<section th:fragment="table-citas-section" class="citas-section container">
+    <div class="text-center">
+        <h2 class="title">Gestión de Citas</h2>
+        <p class="subtitle">Lista de citas registradas en el sistema</p>
+    </div>
+
+    <!-- Contenedor responsivo -->
+    <div class="table-responsive">
+        <table id="citasTable" class="table table-dark table-striped hoverdt-head-center citas-table">
+            <thead>
+            <tr>
+                <th class="dt-head-center">ID</th>
+                <th class="dt-head-center">Nombre Dueño</th>
+                <th class="dt-head-center">Nombre Mascota</th>
+                <th class="dt-head-center">Servicio</th>
+                <th class="dt-head-center">Fecha</th>
+                <th class="dt-head-center">Hora</th>
+                <th class="dt-head-center">Estado</th>
+                <th class="dt-head-center">Acción</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="cita : ${citas}">
+                <td class="dt-body-center" th:text="${cita.idCita}"></td>
+                <td th:text="|${cita.idUsuario.nombre} ${cita.idUsuario.apellido}|"></td>
+                <td th:text="${cita.idMascota.nombre}"></td>
+                <td th:text="${cita.idServicio.nombreServicio}"></td>
+                <td th:text="${cita.fecha}"></td>
+                <td th:text="${cita.hora}"></td>
+                <td>
+                    <select class="estado-select" th:classappend="${cita.estado}" th:attr="data-idcita=${cita.idCita}">
+                        <option value="pendiente" th:selected="${cita.estado == 'pendiente'}">Pendiente</option>
+                        <option value="completada" th:selected="${cita.estado == 'completada'}">Completada</option>
+                        <option value="cancelada" th:selected="${cita.estado == 'cancelada'}">Cancelada</option>
+                    </select>
+                </td>
+                <td>
+                    <button class="btn-edit" th:attr="data-id=${cita.idCita}">Editar</button>
+                    <button class="btn-delete" th:attr="data-id=${cita.idCita}">Eliminar</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</section>

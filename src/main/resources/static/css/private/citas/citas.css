@@ -1,0 +1,233 @@
+/* Sección de Citas */
+.citas-section {
+    background-color: #171717;
+    padding: 40px 0 60px 0;
+    color: #d3d3d3;
+    text-align: center;
+}
+
+/* Contenedor responsivo de la tabla */
+.table-responsive {
+    margin-top: 40px;
+    overflow-x: auto;
+}
+
+/* Tabla de Citas */
+.citas-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Encabezados */
+.citas-table thead {
+    background-color: #252525;
+}
+
+.citas-table th {
+    padding: 15px;
+    font-size: 16px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #444;
+}
+
+/* Filas */
+.citas-table td {
+    padding: 12px;
+    font-size: 15px;
+    border-bottom: 1px solid #333;
+    text-align: center;
+}
+
+/* Alternar colores en filas */
+.citas-table tbody tr:nth-child(even) {
+    background-color: #1e1e1e;
+}
+
+/* Botón de eliminar */
+.btn-delete {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn-delete:hover {
+    background-color: darkred;
+}
+
+/* Botón de edición */
+.btn-edit {
+    background-color: #FBE462;
+    color: black;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn-edit:hover {
+    background-color: #bfab3a;
+}
+
+
+/* Estilo del dropdown de paginación */
+.dt-length select.dt-input {
+    background-color: #252525 !important;
+    color: #d3d3d3 !important;
+    border: 1px solid #6e6e6e !important;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Cambia el color cuando se pasa el mouse */
+.dt-length select.dt-input:hover {
+    background-color: #333 !important;
+}
+
+/* Cambia el color cuando el dropdown está seleccionado */
+.dt-length select.dt-input:focus {
+    outline: none;
+    border-color: #ff0c00 !important;
+}
+
+/* Personaliza la barra de búsqueda */
+.dt-search input.dt-input {
+    background-color: #252525 !important;
+    color: #d3d3d3 !important;
+    border: 1px solid #6e6e6e !important;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 14px;
+}
+
+/* Cambia el color cuando se pasa el mouse */
+.dt-search input.dt-input:hover {
+    background-color: #333 !important;
+}
+
+/* Cambia el color cuando el campo de búsqueda está seleccionado */
+.dt-search input.dt-input:focus {
+    outline: none;
+    border-color: #ff0c00 !important;
+}
+
+/* Estilo general de los botones de paginación */
+div.dt-container .dt-paging .dt-paging-button {
+    color: #ffffff !important;
+    background-color: #333333 !important;
+    border: 1px solid #555555 !important;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 2px;
+    font-weight: bold;
+}
+
+/* Botón activo (página seleccionada) */
+div.dt-container .dt-paging .dt-paging-button.current {
+    background-color: red !important;
+    color: #ffffff !important;
+    border-color: #ff4500 !important;
+}
+
+/* Cambio de color al pasar el mouse */
+div.dt-container .dt-paging .dt-paging-button:hover {
+    background-color: #555555 !important;
+    color: #ffffff !important;
+}
+
+/* Botones deshabilitados */
+div.dt-container .dt-paging .dt-paging-button.disabled {
+    color: rgba(255, 255, 255, 0.5) !important;
+    background-color: #222222 !important;
+    cursor: not-allowed !important;
+}
+
+/* Select de Estado */
+.estado-select {
+    background-color: #252525;
+    color: white;
+    border: 1px solid #6e6e6e;
+    border-radius: 5px;
+    padding: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    width: 130px;
+}
+
+/* Diferentes colores según el estado */
+.estado-select.pendiente {
+    background-color: #798D97 !important;
+    color: white !important;
+}
+
+.estado-select.completada {
+    background-color: #2eb303 !important;
+    color: white !important;
+}
+
+.estado-select.cancelada {
+    background-color: red !important;
+    color: white !important;
+}
+
+/* 🖱️ Colores dentro del Dropdown */
+.estado-select option[value="pendiente"] {
+    background-color: #798D97;
+    color: white;
+}
+
+.estado-select option[value="completada"] {
+    background-color: #2eb303;
+    color: white;
+}
+
+.estado-select option[value="cancelada"] {
+    background-color: red;
+    color: white;
+}
+
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .table-responsive {
+        overflow-x: scroll;
+    }
+
+    .citas-table {
+        width: 900px;
+    }
+
+    .citas-table th,
+    .citas-table td {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .btn-delete,
+    .btn-edit {
+        font-size: 12px;
+        padding: 4px 10px;
+    }
+
+    .estado-select {
+        font-size: 12px;
+        padding: 5px;
+    }
+
+    .dt-search {
+        flex-direction: column;
+        text-align: center;
+    }
+}
