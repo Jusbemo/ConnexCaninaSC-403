@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CitaServiceImpl implements CitaService {
@@ -32,4 +33,10 @@ public class CitaServiceImpl implements CitaService {
     public void delete(Cita cita) {
         citaDao.delete(cita);
     }
+
+    @Override
+    public Optional<Cita> getCitaById(long id) {
+        return citaDao.findById(id);
+}
+
 }
