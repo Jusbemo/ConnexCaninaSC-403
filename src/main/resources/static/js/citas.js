@@ -45,3 +45,5 @@ function actualizarColor($select) {
     // Agregar la clase correspondiente según el estado actual
     $select.addClass($select.val());
 }
+
+initializeDeleteButton('citasTable', 'cita', '/citas/eliminar');

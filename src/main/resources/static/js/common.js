@@ -28,10 +28,25 @@ function initializeDeleteButton(tableId, entityType, deleteUrl) {
         const entityId = $(this).attr('data-id');
 
         let alertText;
-        if (entityType === 'usuario') {
-            alertText = 'El usuario, citas y mascotas asociadas a este serán permanentemente eliminadas.';
-        } else {
-            alertText = `La ${entityType} será eliminada permanentemente.`;
+        let successMessage;
+
+        switch (entityType) {
+            case 'usuario':
+                alertText = 'El usuario, sus citas y mascotas asociadas serán permanentemente eliminadas.';
+                successMessage = 'El usuario y sus datos asociados fueron eliminados correctamente.';
+                break;
+            case 'cita':
+                alertText = 'La cita será eliminada permanentemente.';
+                successMessage = 'La cita fue eliminada correctamente.';
+                break;
+            case 'mascota':
+                alertText = 'La mascota será eliminada permanentemente.';
+                successMessage = 'La mascota fue eliminada correctamente.';
+                break;
+            default:
+                alertText = `El ${entityType} será eliminado permanentemente.`;
+                successMessage = `El ${entityType} fue eliminado correctamente.`;
+                break;
         }
 
         Swal.fire({
@@ -50,7 +65,7 @@ function initializeDeleteButton(tableId, entityType, deleteUrl) {
                 })
                     .then(response => {
                         if (response.ok) {
-                            Swal.fire('¡Eliminado!', `El ${entityType} fue eliminado correctamente.`, 'success')
+                            Swal.fire('¡Eliminado!', successMessage, 'success')
                                 .then(() => window.location.reload());
                         } else {
                             Swal.fire('Error', `Hubo un problema al eliminar el ${entityType}.`, 'error');
