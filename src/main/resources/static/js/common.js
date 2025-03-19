@@ -23,54 +23,72 @@ function initializeDataTable(tableId) {
     });
 }
 
+// Retorna mensajes específicos según el tipo de entidad.
+function getAlertMessages(entityType) {
+    switch (entityType) {
+        case 'usuario':
+            return {
+                alertText: 'El usuario, sus citas y mascotas asociadas serán permanentemente eliminadas.',
+                successMessage: 'El usuario y sus datos asociados fueron eliminados correctamente.'
+            };
+        case 'cita':
+            return {
+                alertText: 'La cita será eliminada permanentemente.',
+                successMessage: 'La cita fue eliminada correctamente.'
+            };
+        case 'mascota':
+            return {
+                alertText: 'La mascota será eliminada permanentemente.',
+                successMessage: 'La mascota fue eliminada correctamente.'
+            };
+        default:
+            return {
+                alertText: `El ${entityType} será eliminado permanentemente.`,
+                successMessage: `El ${entityType} fue eliminado correctamente.`
+            };
+    }
+}
+
+// Muestra la confirmación de eliminación.
+function showDeleteConfirmation(alertText) {
+    return Swal.fire({
+        title: '¿Estás seguro?',
+        text: alertText,
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: "#d33",
+        cancelButtonColor: "#3085d6",
+        confirmButtonText: 'Sí, eliminar',
+        cancelButtonText: 'Cancelar'
+    });
+}
+
+// Realiza la petición para eliminar la entidad.
+function performDeleteRequest(deleteUrl, entityId) {
+    return fetch(`${deleteUrl}/${entityId}`, { method: 'GET' });
+}
+
+// Maneja la respuesta de la petición fetch.
+function handleDeleteResponse(response, successMessage, entityType) {
+    if (response.ok) {
+        Swal.fire('¡Eliminado!', successMessage, 'success')
+            .then(() => window.location.reload());
+    } else {
+        Swal.fire('Error', `Hubo un problema al eliminar el ${entityType}.`, 'error');
+    }
+}
+
+// Inicializa la lógica del botón eliminar.
 function initializeDeleteButton(tableId, entityType, deleteUrl) {
-    $(`#${tableId}`).on('click', '.btn-delete', function() {
+    $(`#${tableId}`).on('click', '.btn-delete', function () {
         const entityId = $(this).attr('data-id');
 
-        let alertText;
-        let successMessage;
+        const { alertText, successMessage } = getAlertMessages(entityType);
 
-        switch (entityType) {
-            case 'usuario':
-                alertText = 'El usuario, sus citas y mascotas asociadas serán permanentemente eliminadas.';
-                successMessage = 'El usuario y sus datos asociados fueron eliminados correctamente.';
-                break;
-            case 'cita':
-                alertText = 'La cita será eliminada permanentemente.';
-                successMessage = 'La cita fue eliminada correctamente.';
-                break;
-            case 'mascota':
-                alertText = 'La mascota será eliminada permanentemente.';
-                successMessage = 'La mascota fue eliminada correctamente.';
-                break;
-            default:
-                alertText = `El ${entityType} será eliminado permanentemente.`;
-                successMessage = `El ${entityType} fue eliminado correctamente.`;
-                break;
-        }
-
-        Swal.fire({
-            title: '¿Estás seguro?',
-            text: alertText,
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: "#d33",
-            cancelButtonColor: "#3085d6",
-            confirmButtonText: 'Sí, eliminar',
-            cancelButtonText: 'Cancelar'
-        }).then((result) => {
+        showDeleteConfirmation(alertText).then(result => {
             if (result.isConfirmed) {
-                fetch(`${deleteUrl}/${entityId}`, {
-                    method: 'GET'
-                })
-                    .then(response => {
-                        if (response.ok) {
-                            Swal.fire('¡Eliminado!', successMessage, 'success')
-                                .then(() => window.location.reload());
-                        } else {
-                            Swal.fire('Error', `Hubo un problema al eliminar el ${entityType}.`, 'error');
-                        }
-                    })
+                performDeleteRequest(deleteUrl, entityId)
+                    .then(response => handleDeleteResponse(response, successMessage, entityType))
                     .catch(() => {
                         Swal.fire('Error', 'Hubo un error en la solicitud.', 'error');
                     });
