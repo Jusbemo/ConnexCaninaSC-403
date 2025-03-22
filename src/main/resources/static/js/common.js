@@ -41,6 +41,11 @@ function getAlertMessages(entityType) {
                 alertText: 'La mascota será eliminada permanentemente.',
                 successMessage: 'La mascota fue eliminada correctamente.'
             };
+        case 'consulta':
+            return {
+                alertText: 'La consulta será eliminada permanentemente.',
+                successMessage: 'La consulta fue eliminada correctamente.'
+            };
         default:
             return {
                 alertText: `El ${entityType} será eliminado permanentemente.`,
@@ -95,4 +100,45 @@ function initializeDeleteButton(tableId, entityType, deleteUrl) {
             }
         });
     });
+}
+
+function initializeSelectColor(selectClass, statusClasses) {
+    $(selectClass).each(function () {
+        actualizarColor($(this), statusClasses);
+    });
+}
+
+
+// Inicializa la lógica para cambiar el estado de una entidad.
+function handleStateChange(selectClass, url, dataIdAttribute, idKey, statusClasses) {
+    $(document).on("change", `.${selectClass}`, function () {
+        const $select = $(this);
+        const id = $select.data(dataIdAttribute);
+        const nuevoEstado = $select.val();
+
+        const bodyData = {};
+        bodyData[idKey] = id;
+        bodyData['estado'] = nuevoEstado;
+
+        fetch(url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(bodyData)
+        })
+            .then(response => {
+                if (!response.ok) throw new Error("Error en la actualización del estado");
+                return response.json();
+            })
+            .then(data => {
+                Swal.fire({ title: "Estado actualizado correctamente", icon: "success" });
+                actualizarColor($select, statusClasses);
+            })
+            .catch(error => console.error("Error:", error));
+    });
+}
+
+// Función para actualizar colores según el estado
+function actualizarColor($select, statusClasses) {
+    $select.removeClass(statusClasses.join(" "));
+    $select.addClass($select.val());
 }

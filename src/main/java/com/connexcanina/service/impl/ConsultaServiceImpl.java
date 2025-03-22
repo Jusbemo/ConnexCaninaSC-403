@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ConsultaServiceImpl implements ConsultaService {
@@ -33,5 +34,10 @@ public class ConsultaServiceImpl implements ConsultaService {
     @Override
     public void delete(Consulta consulta) {
         consultaDao.delete(consulta);
+    }
+
+    @Override
+    public Optional<Consulta> getConsultaById(long id) {
+        return consultaDao.findById(id);
     }
 }

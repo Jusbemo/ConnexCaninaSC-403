@@ -22,10 +22,6 @@ public class CitasController {
 
     @Autowired
     private CitaService citasService;
-    @Autowired
-    private MascotaService mascotaService;
-    @Autowired
-    private CitaService citaService;
 
     @GetMapping("/citas")
     public String citas(HttpServletRequest request, Model model) {
@@ -54,7 +50,7 @@ public class CitasController {
         try {
             Cita cita = new Cita();
             cita.setIdCita(idCita);
-            citaService.delete(cita);
+            citasService.delete(cita);
             return ResponseEntity.ok().build();
         } catch (Exception e) {
             return ResponseEntity.status(500).build();

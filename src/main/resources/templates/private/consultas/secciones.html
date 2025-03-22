@@ -1,0 +1,41 @@
+<section th:fragment="table-consultas-section" class="consultas-section container">
+    <div class="text-center">
+        <h2 class="title">Gestión de Consultas de Clientes</h2>
+        <p class="subtitle">Lista de Consultas registradas en el sistema</p>
+    </div>
+
+    <!-- Contenedor responsivo -->
+    <div class="table-responsive">
+        <table id="consultasTable" class="table table-dark table-striped hoverdt-head-center consultas-table">
+            <thead>
+            <tr>
+                <th class="dt-head-center">ID</th>
+                <th class="dt-head-center">Nombre Cliente</th>
+                <th class="dt-head-center">Teléfono</th>
+                <th class="dt-head-center">Correo Electrónico</th>
+                <th class="dt-head-center">Mensaje/Consulta</th>
+                <th class="dt-head-center">Estado</th>
+                <th class="dt-head-center">Acción</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="consulta : ${consultas}">
+                <td class="dt-body-center" th:text="${consulta.idConsulta}"></td>
+                <td th:text="${consulta.nombre}"></td>
+                <td th:text="${consulta.telefono}"></td>
+                <td th:text="${consulta.correoElectronico}"></td>
+                <td class="dt-body-left" th:text="${consulta.mensaje}" ></td>
+                <td>
+                    <select class="estado-select" th:classappend="${consulta.estado}" th:attr="data-idconsulta=${consulta.idConsulta}">
+                        <option value="pendiente" th:selected="${consulta.estado == 'pendiente'}">Pendiente</option>
+                        <option value="respondida" th:selected="${consulta.estado == 'respondida'}">Respondida</option>
+                    </select>
+                </td>
+                <td>
+                    <button class="btn-delete" th:attr="data-id=${consulta.idConsulta}">Eliminar</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</section>

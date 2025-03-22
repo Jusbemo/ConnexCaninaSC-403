@@ -105,6 +105,12 @@
                                            th:classappend="${currentURI == '/citas' ? 'active' : ''}"
                                            th:href="@{/citas}">CITAS</a>
                                     </li>
+
+                                    <li class="nav-item">
+                                        <a class="nav-link"
+                                           th:classappend="${currentURI == '/consultas' ? 'active' : ''}"
+                                           th:href="@{/consultas}">CONSULTAS</a>
+                                    </li>
                                 </ul>
                             </li>
 
@@ -113,7 +119,6 @@
                     </div>
                 </div>
             </nav>
-
         </header>
 
         <footer th:fragment="footer" class="footer mt-auto">

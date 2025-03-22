@@ -34,7 +34,6 @@ public class Cita {
     @Column(name = "fecha_hora", nullable = false)
     private LocalDateTime fechaHora;
 
-    @Lob
     @Column(name = "estado", nullable = false)
     private String estado;
 

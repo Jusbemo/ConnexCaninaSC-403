@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:replace="~{home/plantilla :: head(titulo='Consultas')}"></th:block>
+    <link th:href="@{/css/private/consultas/consultas.css}" rel="stylesheet">
+</head>
+<body>
+    <header th:replace="~{home/plantilla :: header}"/>
+
+
+    <section th:replace="~{private/consultas/secciones :: table-consultas-section}"/>
+
+    <footer th:replace="~{home/plantilla :: footer}"/>
+    <script th:src="@{/js/common.js}"></script>
+    <script th:src="@{/js/consultas.js}"></script>
+
+</body>
+</html>

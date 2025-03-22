@@ -1,5 +1,5 @@
 /* Sección de Citas */
-.citas-section {
+.consultas-section {
     background-color: #171717;
     padding: 40px 0 60px 0;
     color: #d3d3d3;
@@ -13,7 +13,7 @@
 }
 
 /* Tabla de Citas */
-.citas-table {
+.consultas-table {
     width: 100%;
     border-collapse: collapse;
     border-radius: 10px;
@@ -21,11 +21,11 @@
 }
 
 /* Encabezados */
-.citas-table thead {
+.consultas-table thead {
     background-color: #252525;
 }
 
-.citas-table th {
+.consultas-table th {
     padding: 15px;
     font-size: 16px;
     text-transform: uppercase;
@@ -33,7 +33,7 @@
 }
 
 /* Filas */
-.citas-table td {
+.consultas-table td {
     padding: 12px;
     font-size: 15px;
     border-bottom: 1px solid #333;
@@ -41,7 +41,7 @@
 }
 
 /* Alternar colores en filas */
-.citas-table tbody tr:nth-child(even) {
+.consultas-table tbody tr:nth-child(even) {
     background-color: #1e1e1e;
 }
 
@@ -60,23 +60,6 @@
 .btn-delete:hover {
     background-color: darkred;
 }
-
-/* Botón de edición */
-.btn-edit {
-    background-color: #FBE462;
-    color: black;
-    border: none;
-    padding: 6px 12px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: 0.3s;
-}
-
-.btn-edit:hover {
-    background-color: #bfab3a;
-}
-
 
 /* Estilo del dropdown de paginación */
 .dt-length select.dt-input {
@@ -172,15 +155,11 @@ div.dt-container .dt-paging .dt-paging-button.disabled {
     color: white !important;
 }
 
-.estado-select.completada {
+.estado-select.respondida {
     background-color: #2eb303 !important;
     color: white !important;
 }
 
-.estado-select.cancelada {
-    background-color: red !important;
-    color: white !important;
-}
 
 /* 🖱️ Colores dentro del Dropdown */
 .estado-select option[value="pendiente"] {
@@ -188,15 +167,11 @@ div.dt-container .dt-paging .dt-paging-button.disabled {
     color: white;
 }
 
-.estado-select option[value="completada"] {
+.estado-select option[value="respondida"] {
     background-color: #2eb303;
     color: white;
 }
 
-.estado-select option[value="cancelada"] {
-    background-color: red;
-    color: white;
-}
 
 
 /* Responsivo */
@@ -205,18 +180,17 @@ div.dt-container .dt-paging .dt-paging-button.disabled {
         overflow-x: scroll;
     }
 
-    .citas-table {
+    .consultas-table {
         width: 900px;
     }
 
-    .citas-table th,
-    .citas-table td {
+    .consultas-table th,
+    .consultas-table td {
         font-size: 14px;
         padding: 10px;
     }
 
-    .btn-delete,
-    .btn-edit {
+    .btn-delete {
         font-size: 12px;
         padding: 4px 10px;
     }

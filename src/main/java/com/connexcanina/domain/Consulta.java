@@ -27,7 +27,7 @@ public class Consulta {
     private String mensaje;
 
     @Column(name = "estado")
-    private Boolean estado;
+    private String estado;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_usuario")
