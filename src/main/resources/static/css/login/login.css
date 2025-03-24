@@ -1,0 +1,104 @@
+.login-wrapper {
+    min-height: calc(100vh - 160px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #171717;
+}
+
+/* Form container */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 2em;
+    background-color: #171717;
+    border-radius: 25px;
+    transition: 0.4s ease-in-out;
+    width: 400px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Form hover effect */
+.form:hover {
+    transform: scale(1.05);
+    border: 1px solid black;
+}
+
+/* Form heading (Login / Sign Up) */
+#heading {
+    text-align: center;
+    margin: 1em;
+    color: white;
+    font-size: 1.2em;
+}
+
+/* Input field container */
+.field {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    border-radius: 25px;
+    padding: 0.6em;
+    border: none;
+    outline: none;
+    color: white;
+    background-color: #171717;
+    box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+}
+
+/* Input icon */
+.input-icon {
+    height: 1.3em;
+    width: 1.3em;
+    fill: white;
+}
+
+/* Text input field */
+.input-field {
+    background: none;
+    border: none;
+    outline: none;
+    width: 100%;
+    color: #d3d3d3;
+}
+
+/* Button container */
+.form .btn {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 2em;
+}
+
+/* Primary buttons (Login, Sign Up) */
+.button1, .button2 {
+    padding: 8px 32px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    transition: 0.4s ease-in-out;
+    background-color: #252525;
+    color: white;
+}
+
+/* Button hover effect */
+.button1:hover, .button2:hover {
+    background-color: black;
+}
+
+/* Alternative button (Forgot Password, Already have an account?) */
+.button3 {
+    margin-top: 1em;
+    padding: 0.5em;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    transition: 0.4s ease-in-out;
+    background-color: #252525;
+    color: white;
+}
+
+/* Alternative button hover effect */
+.button3:hover {
+    background-color: red;
+}

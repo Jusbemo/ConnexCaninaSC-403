@@ -4,12 +4,18 @@ body {
     background-color: #121212 !important;
     margin: 0 !important;
     padding: 0 !important;
+    box-sizing: content-box;
 }
 
 /* Top Navbar (Sección superior) */
 .top-navbar {
     background-color: #171717;
     color: #d3d3d3;
+}
+
+a{
+    color: #d3d3d3 !important;
+    text-decoration: none !important;
 }
 
 /* Logo */
@@ -53,6 +59,12 @@ body {
     color: white !important;
 }
 
+button{
+    color: #d3d3d3 !important;
+    text-decoration: none !important;
+    font-size: 14px !important;
+}
+
 /* Responsive */
 @media (max-width: 992px) {
     .top-navbar {
@@ -70,7 +82,6 @@ body {
         text-align: center;
     }
 }
-
 
 
 /* Footer General */

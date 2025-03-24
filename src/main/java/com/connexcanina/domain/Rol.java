@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -11,7 +13,10 @@ import java.util.Set;
 @Setter
 @Entity
 @Table(name = "rol")
-public class Rol {
+public class Rol implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 1L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_rol", nullable = false)
@@ -23,5 +28,4 @@ public class Rol {
 
     @OneToMany(mappedBy = "idRol")
     private Set<Usuario> usuarios = new LinkedHashSet<>();
-
 }
