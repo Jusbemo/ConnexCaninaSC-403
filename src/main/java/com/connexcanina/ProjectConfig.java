@@ -81,8 +81,7 @@ public class ProjectConfig implements WebMvcConfigurer {
                 .formLogin((form) -> form
                         .loginPage("/login").permitAll())
                 .logout((logout) -> logout
-                        .logoutSuccessUrl("/home")
-                        .permitAll()
+                        .logoutSuccessUrl("/").permitAll()
                 );
 
         return http.build();
