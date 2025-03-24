@@ -23,7 +23,7 @@ public class ContactanosController {
         return "public/contactanos/contactanos";
     }
 
-    @PostMapping("/enviar")
+    @PostMapping("/contactanos/enviar")
     public String enviar(@ModelAttribute Consulta consulta) {
         consultaService.save(consulta);
         return "redirect:/contactanos";

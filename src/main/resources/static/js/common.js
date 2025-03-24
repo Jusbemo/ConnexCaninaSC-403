@@ -112,6 +112,9 @@ function initializeSelectColor(selectClass, statusClasses) {
 // Inicializa la lógica para cambiar el estado de una entidad.
 function handleStateChange(selectClass, url, dataIdAttribute, idKey, statusClasses) {
     $(document).on("change", `.${selectClass}`, function () {
+        const csrfToken = $("meta[name='_csrf']").attr("content");
+        const csrfHeader = $("meta[name='_csrf_header']").attr("content");
+
         const $select = $(this);
         const id = $select.data(dataIdAttribute);
         const nuevoEstado = $select.val();
@@ -122,7 +125,10 @@ function handleStateChange(selectClass, url, dataIdAttribute, idKey, statusClass
 
         fetch(url, {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
+            headers: {
+                "Content-Type": "application/json",
+                [csrfHeader]: csrfToken
+            },
             body: JSON.stringify(bodyData)
         })
             .then(response => {

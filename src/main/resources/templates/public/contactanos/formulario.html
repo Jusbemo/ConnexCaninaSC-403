@@ -6,7 +6,8 @@
     </div>
 
     <div class="contact-form-container">
-        <form th:action="@{/enviar}" th:object="${consulta}" method="post" class="contact-form" onsubmit="showSuccessModal(event)">
+        <form th:action="@{/contactanos/enviar}" th:object="${consulta}" method="post" class="contact-form">
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
             <!-- Nombre -->
             <div class="form-group">
                 <label for="name">Nombre</label>
