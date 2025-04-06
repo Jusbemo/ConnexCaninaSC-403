@@ -1,3 +1,4 @@
+<!--Fragmento de sección para la gestión de citas-->
 <section th:fragment="table-citas-section" class="citas-section container">
     <div class="text-center">
         <h2 class="title">Gestión de Citas</h2>
@@ -6,7 +7,7 @@
 
     <!-- Contenedor responsivo -->
     <div class="table-responsive">
-        <table id="citasTable" class="table table-dark table-striped hoverdt-head-center citas-table">
+        <table id="citasTable" class="table table-dark table-striped hover dt-head-center citas-table">
             <thead>
             <tr>
                 <th class="dt-head-center">ID</th>
@@ -43,3 +44,89 @@
         </table>
     </div>
 </section>
+
+
+
+
+<!--Fragmento para la sección de Espacio Citas-->
+<section id="table-space-citas-section" th:fragment="table-space-citas-section" class="citas-section container">
+    <div class="text-center">
+        <h2 class="title">Gestión de Espacio Citas</h2>
+        <p class="subtitle">Lista de espacios de citas registradas en el sistema</p>
+        <button
+                type="button"
+                class="btn-create"
+                data-bs-toggle="modal"
+                data-bs-target="#crearEspacioCitaModal">
+            <i class="fas fa-calendar-plus"></i> Crear Espacio Cita
+        </button>
+    </div>
+
+    <div class="table-responsive">
+        <table id="citasSpaceTable" class="table table-dark table-striped hover dt-head-center citas-table">
+            <thead>
+            <tr>
+                <th class="dt-head-center">ID Espacio</th>
+                <th class="dt-head-center">Fecha</th>
+                <th class="dt-head-center">Hora</th>
+                <th class="dt-head-center">Estado</th>
+                <th class="dt-head-center">Cita Asociada</th>
+                <th class="dt-head-center">Acción</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr th:each="espacio : ${espacios}">
+                    <td class="dt-body-center" th:text="${espacio.idEspacio}"></td>
+                    <td th:text="${#temporals.format(espacio.fecha, 'dd-MM-yyyy')}"></td>
+                    <td th:text="${#temporals.format(espacio.hora, 'hh:mm a')}"></td>
+                    <td>
+                        <select class="estado-espacio-select" th:classappend="${espacio.estado}" th:attr="data-idespacio=${espacio.idEspacio}">
+                            <option value="disponible" th:selected="${espacio.estado == 'disponible'}">Disponible</option>
+                            <option value="reservado" th:selected="${espacio.estado == 'reservado'}">Reservado</option>
+                            <option value="cancelado" th:selected="${espacio.estado == 'cancelado'}">Cancelado</option>
+                        </select>
+                    </td>
+                    <td class="dt-body-center" th:text="${espacio.cita != null} ? ${espacio.cita.idCita} : 'No hay cita Asociada para este espacio'"></td>
+
+                    <td>
+                        <button class="btn-delete" th:attr="data-id=${espacio.idEspacio}">Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>>
+
+
+<!-- Modal para crear un nuevo espacio de cita -->
+<section th:fragment="crear-espacio-citas">
+<div class="modal fade" id="crearEspacioCitaModal" tabindex="-1" aria-labelledby="crearEspacioCitaLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md modal-dialog-centered">
+        <div class="modal-content modal-dark">
+            <div class="modal-header">
+                <h5 class="modal-title" id="crearEspacioCitaLabel">Crear Espacio de Cita</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+
+            <form id="crearEspacioCitaForm"  class="was-validated">
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="fecha" class="form-label">Fecha de la Cita</label>
+                        <input type="date" id="fecha"  class="form-control form-dark" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="hora" class="form-label">Hora de la Cita</label>
+                        <input type="time" id="hora"  class="form-control form-dark" required>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-create"><i class="fas fa-save"></i> Guardar</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</section>
+

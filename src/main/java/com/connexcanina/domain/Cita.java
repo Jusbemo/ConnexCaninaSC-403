@@ -31,6 +31,10 @@ public class Cita {
     @JoinColumn(name = "id_servicio", nullable = false)
     private Servicio idServicio;
 
+    @OneToOne
+    @JoinColumn(name = "id_espacio", referencedColumnName = "id_espacio")
+    private EspacioCita idEspacio;
+
     @Column(name = "fecha_hora", nullable = false)
     private LocalDateTime fechaHora;
 

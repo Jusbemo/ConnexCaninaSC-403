@@ -46,6 +46,11 @@ function getAlertMessages(entityType) {
                 alertText: 'La consulta será eliminada permanentemente.',
                 successMessage: 'La consulta fue eliminada correctamente.'
             };
+        case 'espacioCita':
+            return {
+                alertText: 'El Espacio de Cita será eliminado permanentemente. Ten en cuenta que esto eliminará la cita asociada a este espacio.',
+                successMessage: 'El espacio de cita fue eliminada correctamente.'
+            };
         default:
             return {
                 alertText: `El ${entityType} será eliminado permanentemente.`,
@@ -138,6 +143,7 @@ function handleStateChange(selectClass, url, dataIdAttribute, idKey, statusClass
             .then(data => {
                 Swal.fire({ title: "Estado actualizado correctamente", icon: "success" });
                 actualizarColor($select, statusClasses);
+                refreshEspaciosCitasSection();
             })
             .catch(error => console.error("Error:", error));
     });
