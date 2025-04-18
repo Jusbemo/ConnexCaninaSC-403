@@ -43,13 +43,13 @@ public class Usuario {
     @Column(name = "direccion")
     private String direccion;
 
-    @OneToMany(mappedBy = "idUsuario", cascade = CascadeType.REMOVE, orphanRemoval = true)
+    @OneToMany(mappedBy = "idUsuario", cascade = CascadeType.REMOVE, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<Cita> citas = new ArrayList<>();
 
-    @OneToMany(mappedBy = "idUsuario", cascade = CascadeType.REMOVE, orphanRemoval = true)
+    @OneToMany(mappedBy = "idUsuario", cascade = CascadeType.REMOVE, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<Consulta> consultas = new ArrayList<>();
 
-    @OneToMany(mappedBy = "idUsuario", cascade = CascadeType.REMOVE, orphanRemoval = true)
+    @OneToMany(mappedBy = "idUsuario", cascade = CascadeType.REMOVE, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<Mascota> mascotas = new ArrayList<>();
 
 }

@@ -1,11 +1,14 @@
 package com.connexcanina.controller.Public;
 
 import com.connexcanina.service.ServicioService;
+import com.connexcanina.service.security.CustomUserDetails;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class HomeController {
@@ -19,5 +22,19 @@ public class HomeController {
         model.addAttribute("currentURI", request.getRequestURI());
         return "home";
     }
+
+    @GetMapping("/debug")
+    @ResponseBody
+    public String debug(Authentication auth) {
+        Object principal = auth.getPrincipal();
+
+        if (principal instanceof CustomUserDetails customUser) {
+            return "Usuario autenticado: " + customUser.getUsuario().getNombre() +
+                    " | Rol: " + customUser.getAuthorities();
+        }
+
+        return "Principal NO es CustomUserDetails, es: " + principal.getClass().getName();
+    }
+
 }
 
