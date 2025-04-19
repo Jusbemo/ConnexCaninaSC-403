@@ -36,5 +36,4 @@ public class Mascota {
 
     @OneToMany(mappedBy = "idMascota")
     private Set<Cita> citas = new LinkedHashSet<>();
-
 }

@@ -14,6 +14,4 @@ public interface MascotaService {
     public void delete(Mascota mascota);
 
     public void eliminarMascotaPorId(Long id);
-
-
 }

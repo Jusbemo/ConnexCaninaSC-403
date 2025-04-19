@@ -239,7 +239,6 @@ body {
     box-shadow: 0 0 0 2px rgba(35, 112, 138, 0.4);
 }
 
-/* Opciones dentro del dropdown (en algunos navegadores se ignoran) */
 #raza.form-select option {
     background-color: #1e1e1e;
     color: #ffffff;

@@ -87,8 +87,6 @@ public class PerfilController {
             mascota.setIdUsuario(usuario);
             mascotaService.save(mascota);
         }
-
-        // Agrega el parámetro a la redirección
         return "redirect:/perfil?registro=exito";
     }
 
