@@ -36,13 +36,6 @@
 
                     <!-- Contact Information and Authentication Links -->
                     <div class="d-flex align-items-center contact-info">
-                        <span class="me-3">
-                            <i class="fas fa-envelope"></i> mail@example.com
-                        </span>
-                        <span class="me-3">
-                            <i class="fas fa-phone"></i> 0000-0000
-                        </span>
-
                         <!-- Display Username when Authenticated -->
                         <a th:href="@{/perfil}" class="me-3 auth" sec:authorize="isAuthenticated()" style="text-decoration: none; color: inherit;">
                             <i class="fas fa-user"></i>
