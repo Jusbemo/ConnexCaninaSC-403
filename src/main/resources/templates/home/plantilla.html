@@ -44,10 +44,11 @@
                         </span>
 
                         <!-- Display Username when Authenticated -->
-                        <span class="me-3 auth" sec:authorize="isAuthenticated()">
+                        <a th:href="@{/perfil}" class="me-3 auth" sec:authorize="isAuthenticated()" style="text-decoration: none; color: inherit;">
                             <i class="fas fa-user"></i>
                             <span sec:authentication="name">Username</span>
-                        </span>
+                        </a>
+
 
                         <!-- Login/Register link when Not Authenticated -->
                         <span class="me-3 auth" sec:authorize="!isAuthenticated()">

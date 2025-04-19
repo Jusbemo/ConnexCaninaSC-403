@@ -89,7 +89,7 @@ public class ProjectConfig implements WebMvcConfigurer {
                         .requestMatchers("/citas/**", "/consultas/**", "/mascotas/**", "/usuarios/**",
                                 "/reportes/**", "/citas/actualizarEstado/**")
                         .hasRole("ADMIN")
-                        .requestMatchers("/agendar/**").hasAnyRole("USER", "ADMIN")
+                        .requestMatchers("/agendar/**", "/perfil/**").hasAnyRole("USER", "ADMIN")
                 )
                 .formLogin((form) -> form
                         .loginPage("/login").permitAll())

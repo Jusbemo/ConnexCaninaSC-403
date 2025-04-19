@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:replace="~{home/plantilla :: head(titulo='Mi Perfil')}"></th:block>
+    <link th:href="@{/css/private/mascotas/mascotas.css}" rel="stylesheet">
+    <link th:href="@{/css/private/perfil/perfil.css}" rel="stylesheet">
+</head>
+<body>
+    <header th:replace="~{home/plantilla :: header}"/>
+
+    <div class="perfil-container">
+        <div class="perfil-box">
+            <div th:replace="~{private/perfil/profileNav :: sidebar}"></div>
+            <main th:replace="~{private/perfil/informacion/secciones :: contenido}"></main>
+        </div>
+    </div>
+
+    <footer th:replace="~{home/plantilla :: footer}"/>
+
+    <script th:src="@{/js/common.js}"></script>
+    <script th:src="@{/js/profile.js}"></script>
+
+</body>
+</html>

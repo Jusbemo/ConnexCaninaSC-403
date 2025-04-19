@@ -1,0 +1,275 @@
+/* General */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #171717;
+    color: #d3d3d3;
+}
+
+/* Contenedor principal */
+.perfil-container {
+    display: flex;
+    justify-content: center;
+    padding: 60px 20px;
+}
+
+/* Caja combinada para sidebar y contenido */
+.perfil-box {
+    display: flex;
+    background-color: #1e1e1e;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    width: 100%;
+    max-width: 1200px;
+}
+
+
+/* Sidebar */
+.sidebar {
+    width: 230px;
+    background-color: #252525;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar .nav-link {
+    color: #d3d3d3;
+    padding: 10px;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+    font-weight: 500;
+}
+
+.sidebar .nav-link.active,
+.sidebar .nav-link:hover {
+    background-color: #23708A;
+    color: #ffffff;
+}
+
+/* Contenido */
+.content {
+    width: auto;
+    flex: 1 !important;
+    padding: 30px;
+    color: #fff;
+    background-color: #1e1e1e;
+}
+
+.content h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #ffffff;
+}
+
+.content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.content ul li {
+    background-color: #252525;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+/* 🧾 Estilo del contenedor del formulario */
+#formPerfilUsuario {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    max-width: 800px;
+    margin-top: 20px;
+}
+
+/* Etiquetas del formulario */
+#formPerfilUsuario .form-label {
+    color: #d3d3d3;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Campos de texto y textarea */
+#formPerfilUsuario .form-control {
+    background-color: #252525;
+    color: #ffffff;
+    border: 1px solid #444;
+    border-radius: 6px;
+    padding: 10px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Hover y foco */
+#formPerfilUsuario .form-control:hover,
+#formPerfilUsuario .form-control:focus {
+    background-color: #252525;
+    color: white;
+    border-color: #23708A;
+    box-shadow: 0 0 0 2px rgba(35, 112, 138, 0.4);
+    outline: none;
+}
+
+/* Botón de enviar */
+#formPerfilUsuario .btn-primary {
+    background-color: #23708A;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    color: #ffffff;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover botón */
+#formPerfilUsuario .btn-primary:hover {
+    background-color: #175673;
+    color: #ffffff;
+}
+
+/* Estilo del modal */
+#modalRegistrarMascota .modal-content {
+    background-color: #1e1e1e;
+    color: #d3d3d3;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+    padding: 10px;
+}
+
+/* Encabezado del modal */
+#modalRegistrarMascota .modal-header {
+    border-bottom: 1px solid #444;
+    background-color: #252525;
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* Botón de cerrar modal */
+#modalRegistrarMascota .btn-close {
+    filter: invert(1);
+}
+
+/* Cuerpo del modal */
+#modalRegistrarMascota .modal-body {
+    padding: 20px;
+}
+
+/* Etiquetas */
+#modalRegistrarMascota .form-label {
+    color: #d3d3d3;
+    font-weight: 500;
+}
+
+/* Inputs */
+#modalRegistrarMascota .form-control {
+    background-color: #252525;
+    color: white;
+    border: 1px solid #444;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+#modalRegistrarMascota .form-control:focus {
+    border-color: #23708A;
+    box-shadow: 0 0 0 2px rgba(35, 112, 138, 0.4);
+    background-color: #252525;
+    color: white;
+}
+
+/* Footer del modal */
+#modalRegistrarMascota .modal-footer {
+    background-color: #252525;
+    border-top: 1px solid #444;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 15px;
+}
+
+/* Botón primario */
+#modalRegistrarMascota .btn-primary {
+    background-color: #23708A;
+    border: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+#modalRegistrarMascota .btn-primary:hover {
+    background-color: #175673;
+}
+
+/* Botón secundario */
+#modalRegistrarMascota .btn-secondary {
+    background-color: #555;
+    border: none;
+    color: white;
+}
+
+#modalRegistrarMascota .btn-secondary:hover {
+    background-color: #777;
+}
+
+/* Dropdown estilo dark */
+#raza.form-select {
+    background-color: #252525;
+    color: #d3d3d3;
+    border: 1px solid #444;
+    border-radius: 6px;
+    padding: 10px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Hover del dropdown */
+#raza.form-select:hover {
+    background-color: #2e2e2e;
+    border-color: #23708A;
+}
+
+/* Foco del dropdown */
+#raza.form-select:focus {
+    background-color: #252525;
+    color: #ffffff;
+    border-color: #23708A;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(35, 112, 138, 0.4);
+}
+
+/* Opciones dentro del dropdown (en algunos navegadores se ignoran) */
+#raza.form-select option {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .perfil-box {
+        flex-direction: column;
+        min-width: unset;
+    }
+
+    .sidebar {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 10px;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    .sidebar .nav-link {
+        text-align: center;
+        flex: 1;
+    }
+
+    #formPerfilUsuario {
+        padding: 20px;
+        margin: auto;
+    }
+}

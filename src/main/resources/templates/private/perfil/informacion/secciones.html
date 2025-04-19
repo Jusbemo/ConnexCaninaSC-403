@@ -1,0 +1,138 @@
+<main th:fragment="contenido" class="content">
+        <div class="tab-content">
+
+            <!-- Información Personal -->
+            <div class="tab-pane fade show active" id="informacion">
+                <h2>Información Personal</h2>
+                <form id="formPerfilUsuario">
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" class="form-control" th:value="${usuarioActual.nombre}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="apellido" class="form-label">Apellido</label>
+                        <input type="text" id="apellido" name="apellido" class="form-control" th:value="${usuarioActual.apellido}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="correo" class="form-label">Correo electrónico</label>
+                        <input type="email" id="correo" name="correoElectronico" class="form-control" th:value="${usuarioActual.correoElectronico}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="telefono" class="form-label">Teléfono</label>
+                        <input type="text" id="telefono" name="telefono" class="form-control" th:value="${usuarioActual.telefono}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="direccion" class="form-label">Dirección</label>
+                        <textarea id="direccion" name="direccion" class="form-control" rows="2"
+                                  th:text="${usuarioActual.direccion}">Dirección</textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                </form>
+            </div>
+
+
+            <!-- Mascotas -->
+            <div class="tab-pane fade" id="mascotas">
+                <h2>Mis Mascotas</h2>
+                <div class="table-responsive">
+                    <table id="tablaMascotas" class="table table-dark table-striped table-hover">
+                        <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Raza</th>
+                            <th>Peso (kg)</th>
+                            <th>Edad (años)</th>
+                            <th>Acción</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="mascota : ${usuarioActual.mascotas}">
+                            <td th:text="${mascota.nombre}"></td>
+                            <td th:text="${mascota.raza}"></td>
+                            <td th:text="${mascota.peso}"></td>
+                            <td th:text="${mascota.edad}"></td>
+                            <td>
+                                <button type="button" class="btn btn-danger btn-sm btn-delete"
+                                        th:attr="data-id=${mascota.idMascota}">
+                                    <i class="fas fa-trash-alt"></i> Eliminar
+                                </button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="text-end mt-3">
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalRegistrarMascota">
+                            <i class="fas fa-plus"></i> Registrar Nueva Mascota
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Citas -->
+            <div class="tab-pane fade" id="citas">
+                <h2>Mis Citas</h2>
+                <div class="table-responsive">
+                    <table id="tablaCitas" class="table table-dark table-striped table-hover">
+                        <thead>
+                        <tr>
+                            <th>Mascota</th>
+                            <th>Servicio</th>
+                            <th>Fecha</th>
+                            <th>Hora</th>
+                            <th>Estado</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="cita : ${usuarioActual.citas}">
+                            <td th:text="${cita.idMascota.nombre}"></td>
+                            <td th:text="${cita.idServicio != null ? cita.idServicio.nombreServicio : 'Sin servicio'}"></td>
+                            <td th:text="${cita.fecha}"></td>
+                            <td th:text="${cita.hora}"></td>
+                            <td th:text="${cita.estado}"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="modalRegistrarMascota" tabindex="-1" aria-labelledby="modalMascotaLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <form th:action="@{/perfil/registrarMascota}" method="post" class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalMascotaLabel">Registrar Nueva Mascota</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" name="nombre" id="nombre" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="raza" class="form-label">Raza</label>
+                                <select class="form-select" name="raza" id="raza" required>
+                                    <option value="">Cargando razas...</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="peso" class="form-label">Peso (kg)</label>
+                                <input type="number" step="0.1" class="form-control" name="peso" id="peso" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="edad" class="form-label">Edad (años)</label>
+                                <input type="number" class="form-control" name="edad" id="edad" required>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">Guardar Mascota</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+</main>

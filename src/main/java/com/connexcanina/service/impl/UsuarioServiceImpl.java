@@ -38,4 +38,9 @@ public class UsuarioServiceImpl implements UsuarioService {
     public Usuario getUsuario(long idUsuario) {
         return usuarioDao.findById(idUsuario).orElse(null);
     }
+
+    @Override
+    public Usuario findById(long idUsuario) {
+        return usuarioDao.findById(idUsuario).orElseThrow();
+    }
 }
